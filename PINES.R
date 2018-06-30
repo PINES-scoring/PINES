@@ -14,13 +14,14 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-to_score = c("rs123","rs234") 		# Variant to score
-to_tissue_type = "immune" 		# Tissue type to upweight
-to_constant = 4 			# Manual weighting constant
-to_weigh = c("rs345","rs456") 		# Input variants for enrichment weighting
-ncores = 1 				# Number of cores for parallel computations
-annotation_path = "PINES_annotations/" 	# Path to annotation directory
+to_score = c("rs123","rs234") 		# Specify the list of variants to score
+to_tissue_type = "immune" 		# Specify the tissue type to upweight
+to_constant = 4 			# Specify the manual weighting constant
+to_weigh = c("rs345","rs456") 		# Specify the list of variants for annotation weighting based on enrichments
+ncores = 1 				# Specify the number of cores for parallel computations
+annotation_path = "PINES_annotations/" 	# Specify the path to the unzipped annotation directory downloaded from Zenodo
 
+# Perform annotation of variants
 library(parallel)
 library(compiler)
 file_for_output = "PINES_scores.txt"
@@ -176,6 +177,8 @@ rem_ind = which(new_annotations[,1] == "chrom")
 if(length(rem_ind) > 0){combined_annotations = new_annotations[(-1)*rem_ind,]}else{combined_annotations = new_annotations}
 rm(annotate_SNP,chrom_interact,CTCF_regions,CTCF_regions_liver,enhancer_regions,enhancer_regions_tmp1,enhancer_regions_tmp2,enhancer_regions_tmp3,enhancer_regions_tmp4,fantom_enhancers,final_SNP_matrix,honey_badger_dhs,location_data,location_data_ids,promoter_indexes,tss_data)
 invisible(gc())
+
+# Perform scoring of variants
 data = local(get(load(paste(annotation_path,"data2.RData",sep=""))))
 load(paste(annotation_path,"eQTLs.RData",sep=""))
 cell_types = read.table(paste(annotation_path,"cell_types.csv",sep=""),header=T,sep=",")
