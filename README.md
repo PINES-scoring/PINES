@@ -29,7 +29,7 @@ The script draw_enrichment_heatmap.R plots the annotation weight matrix that is 
 --f: path to the PINES output file copy_of_feature_enrichment_pvalues.RData
 --p: path to the annotation folder
 
-Example: 
+Example:
 
 Rscript draw_enrichment_heatmap.R --p /path/to/annotations_folder/ --f /path/to/copy_of_feature_enrichment_pvalues.RData
 
