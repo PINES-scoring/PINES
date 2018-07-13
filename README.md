@@ -5,7 +5,9 @@ Functional characterization of the noncoding genome is essential for the biologi
 
 Requirements: R (including library optparse), tabix
 
-The epigenetic annotations needed to run PINES can be found at: https://zenodo.org/record/1311246#.W0h6y9hKiLI. 
+The epigenetic annotations needed to run PINES can be found at: https://zenodo.org/record/1311246#.W0h6y9hKiLI. Untar and unzip the downloaded annotations.tar.gz file:
+
+tar xvfz annotations.tar.gz
 
 The script PINES.R accepts the following command-line arguments:
 
