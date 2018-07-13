@@ -1,6 +1,8 @@
 # PINES
 Phenotype-informed tissue weighting improves prediction of disease-relevant noncoding variants
 
+This software is published under the GNU GPL.
+
 Functional characterization of the noncoding genome is essential for the biological understanding of gene regulation and disease. Here, we introduce the computational framework PINES (Phenotype-Informed Noncoding Element Scoring) which predicts the functional impact of noncoding variants by integrating epigenetic annotations in a phenotype-dependent manner. A unique feature of PINES is that analyses may be customized towards genomic annotations from cell types of the highest relevance given the phenotype of interest.
 
 Requirements: R (including libraries optparse and ggplot2), tabix
